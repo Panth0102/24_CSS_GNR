@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            background-image: linear-gradient(to bottom right,#170D35,#2E0B70);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div{
+            width: 50%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        main{
+            width: 6px;
+            height: 200px;
+            position: relative;
+        }
+        section{
+            width: 100%;
+            background-color: rgb(250, 75, 250);
+            position: absolute;
+            animation-name: box;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            border-radius: 5px;
+        }
+        @keyframes box {
+            from{
+                transform: translateY(attr(data-text)*100px);
+                
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }
+        main:first-child section{
+            bottom: 0px;
+            animation-delay: .1s;
+            height: 67px;
+        }
+        main:nth-child(2) section{
+            bottom: 20px;
+            animation-delay: .2s;
+            height: 93px;
+        }
+        main:nth-child(3) section{
+            bottom: 40px;
+            animation-delay: .3s; 
+            height: 67px;
+        }
+        main:nth-child(4) section{
+            bottom: 40px;
+            animation-delay: .4s; 
+            height: 93px;
+        }
+        main:nth-child(5) section{
+            bottom: 20px;
+            animation-delay: .5s;
+            height: 73px;
+        }
+        main:last-child section{
+            bottom: 0px;
+            animation-delay: .6s;
+            height: 73px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <main>
+            <section data-text="1"></section>
+        </main>
+        <main>
+            <section></section>
+        </main>
+        <main>
+            <section></section>
+        </main>
+        <main>
+            <section></section>
+        </main>
+        <main>
+            <section></section>
+        </main>
+        <main>
+            <section></section>
+        </main>
+    </div>
+</body>
+</html>
